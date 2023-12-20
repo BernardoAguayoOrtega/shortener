@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shortehn.ly</title>
+    <!-- Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Additional custom styles can go here */
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4">
+      <header class="text-center py-5">
+        <h1 class="text-4xl font-bold text-gray-800">
+          <a href="{% url 'home' %}">shortehn.ly</a>
+        </h1>
+        <p class="text-gray-600">A modern URL shortening service</p>
+      </header>
+
+      {% block content %}
+      <!-- Main content will be injected here -->
+      {% endblock %}
+
+      <footer class="text-center py-5 text-gray-600">© 2023 shortehn.ly</footer>
+    </div>
+  </body>
+</html>
