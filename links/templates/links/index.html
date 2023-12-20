@@ -1,13 +1,24 @@
-{% extends 'links/__base.html' %}
-
-{% block content %}
-    <h1>My Link Shortener</h1>
-    {% if links %}
-        <h2>Links</h2>
-        <ul>
-            {% for link in links %}
-                <li>{{link.name}} | {{link.url}}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endblock %}
+{% extends 'links/__base.html' %} {% block content %}
+<h1>My Link Shortener</h1>
+{% if links %}
+<h2>Links</h2>
+<ul>
+  {% for link in links %}
+  <div class="p-4 bg-white rounded shadow mb-4">
+    <h2 class="text-xl font-bold mb-2">{{ link.name }}</h2>
+    <p class="mb-2">Clicks: {{ link.clicks }}</p>
+    <p class="mb-2">Slug: {{ link.slug }}</p>
+    <div style="display: flex; justify-content: space-between;">
+      <p class="mb-2">
+        URL: <a href="{{ link.url }}" class="text-blue-500">{{ link.url }}</a>
+      </p>
+      <a
+        href="{{ link.url }}"
+        class="inline-block text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-700"
+        >Go To</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</ul>
+{% endif %} {% endblock %}
