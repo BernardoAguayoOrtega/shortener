@@ -28,14 +28,16 @@
             >All Links</a
           >
         </div>
+        {% if request.resolver_match.url_name != "create-link" %}
         <div>
           <a
-            href="#"
+            href="{% url 'create-link' %}"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
             Add Link
           </a>
         </div>
+        {% endif %}
       </nav>
 
       {% block content %}

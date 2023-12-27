@@ -1,0 +1,17 @@
+{% extends 'links/__base.html' %} {% block content %}
+<form method="POST" class="max-w-sm mx-auto">
+  <label for="url" class="block mb-2">URL:</label>
+  <input
+    type="text"
+    name="url"
+    id="url"
+    class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
+  <button
+    type="submit"
+    class="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
+  >
+    Add Link
+  </button>
+</form>
+{% endblock %}

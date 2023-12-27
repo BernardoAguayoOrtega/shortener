@@ -13,7 +13,8 @@
         URL: <a href="{{ link.url }}" class="text-blue-500">{{ link.url }}</a>
       </p>
       <a
-        href="{{ link.url }}"
+        target="_blank"
+        href="{% url 'root-link' link.slug %}"
         class="inline-block text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-700"
         >Go To</a
       >
