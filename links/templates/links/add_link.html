@@ -1,5 +1,6 @@
 {% extends 'links/__base.html' %} {% block content %}
 <form method="POST" class="max-w-sm mx-auto">
+  {% csrf_token %}
   <label for="url" class="block mb-2">URL:</label>
   <input
     type="text"
