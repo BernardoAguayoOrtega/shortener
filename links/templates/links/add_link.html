@@ -1,19 +1,16 @@
-{% extends 'links/__base.html' %} {% block content %}
+{% extends 'links/__base.html' %}
+{% load widget_tweaks %}
+{% load tailwind_filters %}
+{% block content %}
 <form method="POST" class="max-w-sm mx-auto">
-  {% csrf_token %}
-  <label for="url" class="block mb-2">URL:</label>
-  <input
-    type="text"
-    name="url"
-    id="url"
-    class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-  />
-  {{form}}
-  <button
-    type="submit"
-    class="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
-  >
-    Add Link
-  </button>
+    {% csrf_token %}
+    {% for field in form %}
+        <label for="{{ field.id_for_label }}" class="block mb-2">{{ field.label }}</label>
+        {{ field|add_class:"w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" }}
+    {% endfor %}
+
+    <button type="submit" class="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">
+        Add Link
+    </button>
 </form>
 {% endblock %}

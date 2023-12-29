@@ -3,7 +3,7 @@
 {% if links %}
 <h2>Links</h2>
 <ul>
-  {% for link in links %}
+  {% for link in links reversed %}
   <div class="p-4 bg-white rounded shadow mb-4">
     <h2 class="text-xl font-bold mb-2">{{ link.name }}</h2>
     <p class="mb-2">Clicks: {{ link.clicks }}</p>
